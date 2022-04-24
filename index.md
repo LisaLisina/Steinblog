@@ -1,8 +1,8 @@
 ---
 layout: home
-title: eleven
+title: Steinblog
 ---
 
-Boulder Bloc
+Steinblog
 ===============
-Climbing is cool
+Our adventure diary
