@@ -8,6 +8,7 @@ jobs:
   github-pages:
     runs-on: ubuntu-latest
     steps:
+      - run: git config --global http.postBuffer 524288000
       - uses: actions/checkout@v2
       - uses: helaili/jekyll-action@v2
         with:                               
