@@ -3,15 +3,17 @@ theme: eleven-theme
 
 eleven:
   date_format: "%b %d, %Y"
-  logo:  "assets/logo.png" 
+  logo:  "assets/logo.png"
 
 permalink: post/:title
 
-title: "eleven"
-description: "simple & clean jekyll theme"
+title: "Steinblog"
+description: ""
 excerpt_separator: <!--more-->
 page_excerpts: true
 
 collections:
   Harz:
     output: true
+
+baseurl: /steinblog
