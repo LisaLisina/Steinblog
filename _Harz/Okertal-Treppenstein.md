@@ -9,4 +9,4 @@ Scheibe
 
 Name    | Description                           | Grade | L | P
 ------- | ------------------------------------- | ----- |:-:|:-:
-Kristallografie | XXXXX SD | 6b+ | [] | [x]
+Kristallografie | XXXXX SD | 6b+ | [ ] | [x]

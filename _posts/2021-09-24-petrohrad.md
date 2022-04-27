@@ -15,13 +15,14 @@ On the first day we climbed in Zihle, Sklárna sever. Here's a picture of the bo
 
 ![send-paul]({{ "/assets/petrohrad/send-paul.png" | relative_url }})
 
-**![boulder]({{ "/assets/petrohrad/boulder.png" | relative_url }})**
-
-**![crashpads]({{ "/assets/petrohrad/crashpads.png" | relative_url }})**
+# ![boulder]({{ "/assets/petrohrad/boulder.png" | relative_url }})
+<hr style="height:8px; visibility:hidden;" />
+# ![crashpads]({{ "/assets/petrohrad/crashpads.png" | relative_url }})
 
 On the second day, we checked out a different area. I will add the information if I find out where it was ;)
 
-**![boulder-d2]({{ "/assets/petrohrad/boulder-d2.png" | relative_url }})**
+# ![boulder-d2]({{ "/assets/petrohrad/boulder-d2.png" | relative_url }})
+<hr style="height:8px; visibility:hidden;" />
 
 ### Where to eat
 Restaurace Tom in Kryry - in general it was quite hard to find vegetarian food in this area. However, all restaurants put together their vegeterian stuff and created delicousness for us. Don't forget to try *knedlíky* when you are around :)

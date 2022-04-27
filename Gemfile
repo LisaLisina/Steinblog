@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require 'resolv-replace'
 
 source "https://rubygems.org"
 
