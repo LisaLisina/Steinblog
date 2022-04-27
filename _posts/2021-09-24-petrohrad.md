@@ -4,7 +4,6 @@ title: Petrohrad
 ---
 Petrohrad is a granite boulder area in the Czech Republic, which is sometimes referred to as the Czech Fontainebleau because of the boulder density in the area. The stone is grippy and a true skin destroyer due to its tiny spikes.
 
-
 ### Where we stayed
 At the campsite in Jesenice. As we only stayed for the weekend, we decided to go for the full camping experience and stayed in our lightweight tent. For those who prefer a little cabin, you can rent one there.
 
