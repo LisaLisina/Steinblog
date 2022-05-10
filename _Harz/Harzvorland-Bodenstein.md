@@ -5,7 +5,7 @@ title: Harzvorland, Bodenstein
 
 Disco
 --------------
-# ![Disco]({{ "/assets/harz/disco.png" | relative_url }})
+# ![Disco]({{ "/assets/harz/disco.jpeg" | relative_url }})
 
 Name    | Description                           | Grade | L | P
 ------- | ------------------------------------- | ----- |:-:|:-:
