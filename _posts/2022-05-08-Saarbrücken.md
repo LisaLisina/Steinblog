@@ -11,7 +11,7 @@ We spent the weekend close to Metz attending a beautiful wedding. Friends said *
 On our way back home, we stopped in Saarbrücken to check out some local climbing gym.
 
 ### Where we climbed
-There are several climbing gyms in Saarbrücken. We decided to check out this one and enjoyed it a lot.
+There are several climbing gyms in Saarbrücken. We decided to check out Kletterzentrum Saarbrücken and enjoyed it a lot.
 ## ![kletterzentrum]({{ "/assets/Saarbrücken/kletterzentrum.jpeg" | relative_url }}) ![hoch]({{ "/assets/Saarbrücken/hoch.jpeg" | relative_url }})
 
 The atmosphere was amazing with big windows in the bouldering area. The rope climbing area provided nice routes and a huge roof. Definitely worth a visit. A 5/5 boulder brushes experience!

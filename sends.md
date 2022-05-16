@@ -3,6 +3,21 @@ layout: page
 title: Sends
 ---
 
+# L
+## Boulder
+
+| Name       | Grade  | Location | Date | Comments       |
+|:-----------|--------|----------|------|----------------|
+| Spreewaldbanane | 6b+ | Wiesental |  05-2022 |   |
+| Breakdance | 6c | Bodenstein |  04-2022 |   |
+| Großraumdisco | 6a | Bodenstein |  04-2022 |   |
+
+## Lead
+
+| Name       | Grade  | Location | Date | Comments       |
+|:-----------|--------|----------|------|----------------|
+| Bel Air | V | Maria Spring |   09-2021 |   |
+
 # P
 ## Boulder
 
