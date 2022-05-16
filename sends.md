@@ -8,6 +8,9 @@ title: Sends
 
 | Name       | Grade  | Location | Date | Comments       |
 |:-----------|--------|----------|------|----------------|
+| Tschipfel | 6b | Bodenstein |  05-2022 |   |
+| Eifon | 6b+ | Bodenstein |  05-2022 |   |
+| Business class | 6a | Bodenstein |  05-2022 |   |
 | Super Furor | 6b+ | Wiesental |  05-2022 |   |
 | Spreewaldbanane | 6b+ | Wiesental |  05-2022 |   |
 | Expendor | 6a+ | Wiesental |  05-2022 |   |
