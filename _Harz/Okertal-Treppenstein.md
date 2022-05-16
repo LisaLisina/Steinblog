@@ -1,7 +1,5 @@
----
-layout: post
-title: Okertal, Treppenstein
----
+
+
 
 Scheibe
 --------------
