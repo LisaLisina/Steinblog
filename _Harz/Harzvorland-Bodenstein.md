@@ -10,7 +10,7 @@ Disco
 Name    | Description                           | Grade | L | P
 ------- | ------------------------------------- | ----- |:-:|:-:
 Großraumdisco | red line SD | 6a | [x] | [ ]
-Breakdance | blue line SD  | 6c | [x] | [ ]
+[Breakdance]({{ "/assets/harz/breakdance.mp4" | relative_url }}) | blue line SD  | 6c | [x] | [x]
 
 Tropenblock
 --------------
@@ -27,6 +27,7 @@ Quader
 
 Name    | Description                           | Grade | L | P
 ------- | ------------------------------------- | ----- |:-:|:-:
+[Schwarzes Loch]({{ "/assets/harz/schwarzesloch.mp4" | relative_url }}) | green line SD | 6a | [x] | [x]
 Business class | red line SD | 6a | [ ] | [x]
-[Eifon]({{ "/assets/harz/eifon.mp4" | relative_url }})| white line | 6b+ | [ ] | [x]
-[Tschipfel]({{ "/assets/harz/tschipfel.mp4" | relative_url }}) | blue line | 6b | [ ] | [x]
+[Eifon]({{ "/assets/harz/eifon.mp4" | relative_url }})| white line SD | 6b+ | [ ] | [x]
+[Tschipfel]({{ "/assets/harz/tschipfel.mp4" | relative_url }}) | blue line SD | 6b | [ ] | [x]
