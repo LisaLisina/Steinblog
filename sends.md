@@ -24,6 +24,8 @@ title: Sends
 
 | Name       | Grade  | Location | Date | Comments       |
 |:-----------|--------|----------|------|----------------|
+| Little Boy | 6a+ | Bodenstein |  05/22 |   |
+| Krachlatte | 6c+ | Okertal |  06/22 |   |
 | Breakdance | 6c | Bodenstein |  05/22 |   |
 | Schwarzes Loch | 6a | Bodenstein |  05/22 |   |
 | Tschipfel | 6b | Bodenstein |  05/22 |   |
@@ -56,6 +58,8 @@ title: Sends
 
 | Name       | Grade  | Location | Date | Comments       |
 |:-----------|--------|----------|------|----------------|
+| Alter Weg | VII | Frankenjura, Spitzer Turm |   06/22 | onsight |
+| Nürnberger Weg | VI+ | Frankenjura, Rabenstein |   06/22 | onsight |
 | Das Umständemonster | VII | Maria Spring |   03/22 | onsight |
 | Damenwahl | VII | Maria Spring |   03/22 |   |
 | Herrenpartie | VII+ | Maria Spring |   03/22 | onsight |
