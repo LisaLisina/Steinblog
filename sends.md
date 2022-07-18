@@ -8,10 +8,16 @@ title: Sends
 
 | Name       | Grade  | Location | Date | Comments       |
 |:-----------|--------|----------|------|----------------|
+| Kontrastkante | 6a | Bodenstein |  07/22 | flash |
 | Schwarzes Loch | 6a | Bodenstein |  05/22 |   |
 | Spreewaldbanane | 6b+ | Wiesental |  05/22 |   |
 | Breakdance | 6c | Bodenstein |  04/22 |   |
 | Großraumdisco | 6a | Bodenstein |  04/22 |   |
+| La Zip Zut (direct) | 6b | Franchard Isatis | 04/22 | |
+| Crocodile | 6a | Franchard Isatis |  04/22 | |
+| L'Antigel | 5- | Franchard Isatis |  04/22 | |
+| Le Coup de Chaud (assis) | 5+ | Franchard Isatis |  04/22 | |
+
 
 ## Lead
 
@@ -24,6 +30,8 @@ title: Sends
 
 | Name       | Grade  | Location | Date | Comments       |
 |:-----------|--------|----------|------|----------------|
+| Blackberry | 7a | Bodenstein |  07/22 |   |
+| Kontrastkante | 6a | Bodenstein |  07/22 |  |
 | Little Boy | 6a+ | Bodenstein |  05/22 |   |
 | Krachlatte | 6c+ | Okertal |  06/22 |   |
 | Breakdance | 6c | Bodenstein |  05/22 |   |
