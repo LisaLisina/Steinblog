@@ -3,8 +3,6 @@ layout: block
 title: Hello, it's us
 ---
 
-the rocky and the pain - at least that's what I call my fingers before and after climbing
+follow us writing about our adventures on and off the rock.
 
-[![fingers]({{ "/assets/fingers.jpeg" | relative_url }})]({{ "/sends.html" | relative_url }})
-
-This is us writing about our adventures on the rock.
+# [![locker]({{ "/assets/locker.jpeg" | relative_url }})]({{ "/assets/fingers.jpeg" | relative_url }})

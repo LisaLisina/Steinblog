@@ -6,4 +6,5 @@ title: Steinblog
 Steinblog
 ===============
 Our adventure diary    
-[List of Sends]({{ "sends.md" | relative_url }})
+[Lisa sends]({{ "lenz" | relative_url }})   
+[Paul sends]({{ "pends" | relative_url }})   
