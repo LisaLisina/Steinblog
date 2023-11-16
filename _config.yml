@@ -1,0 +1,18 @@
+theme: eleven-theme
+
+eleven:
+  date_format: "%b %d, %Y"
+  logo:  "assets/logo.jpeg"
+
+permalink: post/:title
+
+title: "Steinblog"
+description: ""
+excerpt_separator: <!--more-->
+page_excerpts: true
+
+collections:
+  Harz:
+    output: true
+
+# baseurl: /Steinblog
