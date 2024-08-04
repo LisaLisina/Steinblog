@@ -5,10 +5,16 @@ title: Lisa sends
 
 ## Boulder
 
-
-
 | Name       | Grade  | Location | Date | Comments       |
 |:-----------|--------|----------|------|----------------|
+| [Blocco 9, A]({{ "/assets/daone/aser9a_l.mp4" | relative_url }}) | 6a+ | Dos dei Aser, Daone |  07/24 | |
+| [Blocco 15, B]({{ "/assets/daone/aser15b_l.mp4" | relative_url }}) | 6a+ | Dos dei Aser, Daone |  07/24 | |
+| [Blocco 6, A]({{ "/assets/daone/plana6a.mp4" | relative_url }}) | 6a | La Plana, Daone |  07/24 | |
+| [Blocco 2, N]({{ "/assets/daone/plana2n.mp4" | relative_url }}) | 5c | La Plana, Daone |  07/24 | |
+| [Blocco 2, E]({{ "/assets/daone/plana2e.mp4" | relative_url }}) | 5b | La Plana, Daone |  07/24 | flash |
+| Calentamiento | 6a | El Poris, Tenerife |  01/24 |   |
+| [Ups]({{ "/assets/tenerife/boulder.mp4" | relative_url }}) | 6c | El Poris, Tenerife |  01/24 |   |
+| Charlie | 6b+ | El Poris, Tenerife |  01/24 |   |
 | [Bordwand]({{ "/assets/harz/bordwand.mp4" | relative_url }}) | 6a | Blankenburg |  07/23 |   |
 | Untergang | 5c | Blankenburg |  08/23 |   |
 | Le Télégramme | 4 | Canche aux Merciers |  05/23 |   |
@@ -52,5 +58,16 @@ title: Lisa sends
 
 | Name       | Grade  | Location | Date | Comments       |
 |:-----------|--------|----------|------|----------------|
+| Spatzenhirn | V+ | Vogelwandl, Baden | 6/24 | onsight | 
+| El contrato del zapatero | VII-/VII | Tenerifa, Arico |   02/24 |   |
+| Los hombres grises | V | Tenerifa, Arico |   02/24 |   |
 | Butterfly | V | Frankenjura, Steinfelder Wändchen |   07/23 |   |
 | Bel Air | V | Maria Spring |   09/21 | onsight |
+
+## Multipitch
+
+| Name       | Grade  | Location | Date | Comments       |
+|:-----------|--------|----------|------|----------------|
+| Die kleine Klapsmühle | V | Flatzer Wand | 12/23 | |
+| Der große Affenzirkus | V | Flatzer Wand | 11/23 | |
+| Westwand | V | Rax, Wachthüttelturm| 11/23 | |

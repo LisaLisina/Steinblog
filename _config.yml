@@ -12,6 +12,9 @@ excerpt_separator: <!--more-->
 page_excerpts: true
 
 collections:
+  Food:
+    output: true
+    title: "Food (that makes climbing harder)"
   Harz:
     output: true
 

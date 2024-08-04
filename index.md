@@ -1,9 +1,9 @@
 ---
 layout: home
-title: Steinblog
+title: Lockerflockig
 ---
 
-Steinblog
+Lockerflockig
 ===============
 Our adventure diary    
 [Lisa sends]({{ "lenz" | relative_url }})   

@@ -7,6 +7,21 @@ title: Paul sends
 
 | Name       | Grade  | Location | Date | Comments       |
 |:-----------|--------|----------|------|----------------|
+| [Blocco 9, A]({{ "/assets/daone/aser9a_p.mp4" | relative_url }}) | 6a+ | Dos dei Aser, Daone |  07/24 | |
+| Blocco 17, C | 6b+ | Dos dei Aser, Daone |  07/24 | flash |
+| [Blocco 14, N]({{ "/assets/daone/aser14n.mp4" | relative_url }}) | 6b | Dos dei Aser, Daone |  07/24 | |
+| [Blocco 15, A]({{ "/assets/daone/aser15a.mp4" | relative_url }}) | 6b | Dos dei Aser, Daone |  07/24 | flash |
+| [Blocco 15, B]({{ "/assets/daone/aser15b_p.mp4" | relative_url }}) | 6a+ | Dos dei Aser, Daone |  07/24 | |
+| Blocco 7, Q | 6c | La Plana, Daone |  07/24 | |
+| Blocco 6, A | 6a | La Plana, Daone |  07/24 | flash |
+| El Padron del Mal | 6b+ | La Plana, Daone |  07/24 | |
+| Blocco 4, G | 5b | La Plana, Daone |  07/24 | flash |
+| Blocco 2, B | 6a+ | La Plana, Daone |  07/24 | flash |
+| Calentamiento | 6a | El Poris, Tenerife |  01/24 |   |
+| Westfalia | 6c | El Poris, Tenerife |  01/24 |   |
+| Ups | 6c | El Poris, Tenerife |  01/24 |   |
+| Charlie | 6b+ | El Poris, Tenerife |  01/24 |   |
+| Lost in Barranco | 6c+ | El Poris, Tenerife |  01/24 | flash |
 | [Eisberg]({{ "/assets/harz/eisberg.mp4" | relative_url }}) | 6c | Blankenburg |  07/23 |   |
 | Bordwand | 6a | Blankenburg |  07/23 |   |
 | Untergang | 5c | Blankenburg |  07/23 |   |
@@ -35,7 +50,7 @@ title: Paul sends
 | [Powerslave]({{ "/assets/font3/powerslave.mp4" | relative_url }}) | 7a | Apremont Ouest |  04/23 |   |
 | [Skorbut]({{ "/assets/wiesental/skorbut.mp4" | relative_url }}) | 6c+ | Wiesental |  11/22 |   |
 | [La Rampe]({{ "/assets/font2/larampe.mp4" | relative_url }}) | 6a | Apremont Butte aux Dames |  10/22 |   |
-| [Le Blocage Tonique]({{ "/assets/font2/bloctonique.mp4" | relative_url }}) | 6a | Apremont Butte aux Dames |  10/22 |   |
+| [Le Blocage Tonique]({{ "/assets/font2/blocagetonique.mp4" | relative_url }}) | 6a | Apremont Butte aux Dames |  10/22 |   |
 | La Singlette | 6b+ | Rocher Canon |  10/22 |   |
 | L'Arpenteur du Restant | 6b | Restant du Long Rocher Sud |  10/22 |   |
 | L'Imparfait | 5 | Apremont Ouest |  10/22 |   |
@@ -109,6 +124,23 @@ title: Paul sends
 
 | Name       | Grade  | Location | Date | Comments       |
 |:-----------|--------|----------|------|----------------|
+| Sommer | VI+ | Glocknergrad, Mödling | 8/24 | | 
+| Vogerltanz | VI | Vogelwandl, Baden | 6/24 | onsight | 
+| Geierwally | VI | Vogelwandl, Baden | 6/24 | onsight | 
+| Kolibri | VII- | Vogelwandl, Baden | 6/24 | onsight | 
+| Frühschoppen | VI+ | Glocknergrad, Mödling | ? | | 
+| The Edge | VI+ | Glocknergrad, Mödling | ? | | 
+| Fiaker | VI+ | Glocknergrad, Mödling | 7/24 | | 
+| Frühling | VIII- | Glocknergrad, Mödling | 6/24 | | 
+| El diedro del clavo rojo | V+ | Tenerifa, El Capricho |   02/24 | onsight |
+| Placca de Bazzocchi | VI+ | Tenerifa, El Capricho |   02/24 | onsight |
+| No hay colega sin taco | V | Tenerifa, Arico |   02/24 | onsight |
+| No hay pieda pa'los gogod | VII+/VIII- | Tenerifa, Arico |   02/24 |   |
+| Sick english | VI+ | Tenerifa, Arico |   02/24 | onsight |
+| Km 11 | VII | Tenerifa, Arico |   02/24 |   |
+| No cepillo mas | VII- | Tenerifa, Arico |   02/24 | onsight  |
+| El espolon de Reno | VI+/VII | Tenerifa, Fantasma |   02/24 | onsight  |
+| Carnet de piloto | VII+ | Tenerifa, Fantasma |   02/24 |   |
 | Böser Bum kreuzt | VII | Bum Bum Wandl |   10/23 |   |
 | Ettapen Bum | VI+ | Bum Bum Wandl |   10/23 |   |
 | Giebelweg | VII+ | Frankenjura, Landrichter Seite |   07/23 |   |
@@ -132,3 +164,11 @@ title: Paul sends
 | Herrenpartie | VII+ | Gö, Maria Spring |   03/22 | onsight |
 | Und sie bewegt sich doch... | VI+/VII- | Gö, Rheinhäuser Tal |   08/21 |   |
 | Hensens Roadtrip | VI+ | Gö, Maria Spring |   08/21 |   |
+
+## Multipitch
+
+| Name       | Grade  | Location | Date | Comments       |
+|:-----------|--------|----------|------|----------------|
+| Die kleine Klapsmühle | V | Flatzer Wand | 12/23 | |
+| Der große Affenzirkus | V | Flatzer Wand | 11/23 | |
+| Westwand | V | Rax, Wachthüttelturm| 11/23 | |
