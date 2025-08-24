@@ -1,0 +1,23 @@
+theme: eleven-theme
+
+eleven:
+  date_format: "%b %d, %Y"
+  logo:  "assets/logo.jpeg"
+
+permalink: post/:title
+
+title: "lockerflockig"
+description: ""
+excerpt_separator: <!--more-->
+page_excerpts: true
+
+collections:
+  Food:
+    output: true
+    title: "Food (that makes climbing harder)"
+  Harz:
+    output: true
+  Homewall:
+    output: true
+
+# baseurl: /lockerflockig
