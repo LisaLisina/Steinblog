@@ -7,6 +7,19 @@ title: Paul sends
 
 | Name       | Grade  | Location | Date | Comments       |
 |:-----------|--------|----------|------|----------------|
+| Früher Vogel fängt den Wurm | 6b?6c+ | Super Crack, Galtür | 08/25 | sit version |
+| Wini Tatsch | 6a+ | Super Crack, Galtür | 08/25 | |
+| Austrian summer | 6b+ | Super Crack, Galtür | 08/25 | bailed |
+| g, B1 | 6b | Schuh des Manitu, Galtür | 08/25 | |
+| Kobra | 6a+ | Sekten, Galtür | 08/25 | |
+| c, B16 | 6a+ | Sekten, Galtür | 08/25 | |
+| Schwarz, B14 | 5b | Sekten, Galtür | 08/25 | |
+| River Gifts | 6A | Tal der Könige | 05/25 | |
+| Proc Neemigrovat | 6B | Bor | 05/25 | |
+| Scottie Pipen | 6C+ | Bor | 05/25 | |
+| Skoky Pipen | 6C+ | Bor | 05/25 | |
+| Odveta | 6A | Bor | 05/25 | |
+| Zpoďáčky | 6A | Bor | 05/25 | |
 | Mémoire Courte | 3+ | Apremont Désert | 11/24 | |
 | L'Anticat | 4 | Apremont Désert | 11/24 | |
 | La Lame | 3 | Apremont Désert | 11/24 | |
@@ -143,6 +156,16 @@ title: Paul sends
 
 | Name       | Grade  | Location | Date | Comments       |
 |:-----------|--------|----------|------|----------------|
+| O.N. | VII- | Linker Sektor, Wiesbadener Hütte, Galtür  | 08/25 | onsight |
+| O.N. | VII | Rechter Sektor, Wiesbadener Hütte, Galtür  | 08/25 | onsight |
+| O.N. | VII- | Rechter Sektor, Wiesbadener Hütte, Galtür  | 08/25 | onsight |
+| O.N. | VI | Rechter Sektor, Wiesbadener Hütte, Galtür  | 08/25 | onsight |
+| Besser als im richtigen Leben | VII | Wunderland, Maltatal  | 07/25 | onsight |
+| Friedl | VI | Kreuzwand, Maltatal | 07/25 | onsight |
+| Vogelkante | VI+ | Vogelwand, Baden | 04/25 | onsight |
+| Vogeln erlaubt | VI | Vogelwand, Baden | 04/25 | onsight |
+| Le Cirque | 5.10- | Barnum Rock, Willow Canyon, Arizona | 02/25 | onsight |
+| Road Kill | 5.9 | Barnum Rock, Willow Canyon, Arizona | 02/25 | onsight |
 | Morgengrau | VII+ | Thalhofergrat | 10/24 | onsight |
 | Don Rosl | VII | Thalhofergrat | 10/24 | flash |
 | Don Roberto | VI+ | Thalhofergrat | 10/24 | onsight |
@@ -152,6 +175,7 @@ title: Paul sends
 | Aichemal | VI/- | Lomasone, Daone |  09/24 | onsight |
 | Il Cerchio di Arcobaleno | VII+ | Vela, Daone |  09/24 | |
 | Stella Nascente | VII- | Vela, Daone |  09/24 | onsight |
+| Rechtsdrall | VII | Efeugrat, Mödling | 8/24 | | 
 | Sommer | VI+ | Glocknergrad, Mödling | 8/24 | | 
 | Vogerltanz | VI | Vogelwandl, Baden | 6/24 | onsight | 
 | Geierwally | VI | Vogelwandl, Baden | 6/24 | onsight | 
@@ -197,6 +221,7 @@ title: Paul sends
 
 | Name       | Grade  | Location | Date | Comments       |
 |:-----------|--------|----------|------|----------------|
+| Feed the Sweed | 5.8 | Barnum Rock, Willow Canyon, Arizona | 02/25 | |
 | Die kleine Klapsmühle | V | Flatzer Wand | 12/23 | |
 | Der große Affenzirkus | V | Flatzer Wand | 11/23 | |
 | Westwand | V | Rax, Wachthüttelturm| 11/23 | |

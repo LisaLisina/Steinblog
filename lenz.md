@@ -7,6 +7,19 @@ title: Lisa sends
 
 | Name       | Grade  | Location | Date | Comments       |
 |:-----------|--------|----------|------|----------------|
+| Früher Vogel fängt den Wurm | 6b?6c+ | Super Crack, Galtür | 08/25 | sit version |
+| Wini Tatsch | 6a+ | Super Crack, Galtür | 08/25 | |
+| b, B3 | 6a | Schuh des Manitu, Galtür | 08/25 | |
+| g, B1 | 6b | Schuh des Manitu, Galtür | 08/25 | |
+| Kobra | 6a+ | Sekten, Galtür | 08/25 | flash |
+| c, B16 | 6a+ | Sekten, Galtür | 08/25 | |
+| Rot, B14 | 4a | Sekten, Galtür | 08/25 | |
+| Schwarz, B14 | 5b | Sekten, Galtür | 08/25 | |
+| Proc Neemigrovat | 6B | Bor | 05/25 | |
+| Vlevo od skoky pipen | 6B (6A) | Bor | 05/25 | |
+| Fatality | 5+ | Bor | 05/25 | Flash |
+| Čaroděj | 6A+ | Bor | 05/25 | |
+| Zpoďáčky | 6A | Bor | 05/25 | |
 | Mémoire Courte | 3+ | Apremont Désert | 11/24 | |
 | L'Anticat | 4 | Apremont Désert | 11/24 | |
 | [La Lame]({{ "/assets/font5/lalame.mp4" }}) | 3 | Apremont Désert | 11/24 | |
@@ -73,6 +86,15 @@ title: Lisa sends
 
 | Name       | Grade  | Location | Date | Comments       |
 |:-----------|--------|----------|------|----------------|
+| O.N. | VII- | Linker Sektor, Wiesbadener Hütte, Galtür  | 08/25 | flash |
+| O.N. | VII- | Rechter Sektor, Wiesbadener Hütte, Galtür  | 08/25 | flash |
+| O.N. | VI | Rechter Sektor, Wiesbadener Hütte, Galtür  | 08/25 | flash |
+| O.N. | VI | Rechter Sektor, Wiesbadener Hütte, Galtür  | 08/25 | flash |
+| O.N. | V+ | Rechter Sektor, Wiesbadener Hütte, Galtür  | 08/25 | flash |
+| Fliegender Heini unten | V+ | Kreuzwand, Maltatal | 07/25 | onsight |
+| 35 O.N. | VI- | Kreuzwand, Maltatal | 07/25 | onsight |
+| 34 O.N. | VI | Kreuzwand, Maltatal | 07/25 | onsight |
+| Vogeln erlaubt | VI | Vogelwand, Baden | 04/25 | onsight |
 | Maget | VII- | Lomasone, Daone |  09/24 | flash, HG |
 | Stella Nascente | VII- | Vela, Daone |  09/24 | |
 | Inzi | VI/VI+ | Vela, Daone |  09/24 | onsight |
