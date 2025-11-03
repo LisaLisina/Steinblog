@@ -2,7 +2,7 @@ Title: Lemon Cake
 Date: 2021-08-01
 Category: Food
 
-# ![]({{ "/assets/food/lemoncake.jpg" | relative_url }}) *Yummy*
+# ![img](images/food/lemoncake.jpg) *Yummy*
 
 ## Ingredients
 

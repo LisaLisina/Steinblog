@@ -5,48 +5,48 @@ Category: Harz
 
 Disco
 --------------
-# ![Disco]({{ "/assets/harz/disco.jpeg" | relative_url }})
+# ![Disco](images/harz/disco.jpeg)
 
 Name    | Description                           | Grade | L | P
 ------- | ------------------------------------- | ----- |:-:|:-:
 Großraumdisco | red line SD | 6a | [x] | [ ]
-[Breakdance]({{ "/assets/harz/breakdance.mp4" | relative_url }}) | blue line SD  | 6c | [x] | [x]
+[Breakdance](images/harz/breakdance.mp4) | blue line SD  | 6c | [x] | [x]
 
 Senke
 --------------
-# ![Senke]({{ "/assets/harz/senke.jpeg" | relative_url }})
+# ![Senke](images/harz/senke.jpeg)
 
 Name    | Description                           | Grade | L | P
 ------- | ------------------------------------- | ----- |:-:|:-:
-[Kontrastkante]({{ "/assets/harz/kontrastkante.mp4" | relative_url }}) | blue line SD  | 6a | [x] | [x]
-[Schattenseite]({{ "/assets/harz/schattenseite.mp4" | relative_url }}) | red line SD  | 6a+ | [x] | [x]
+[Kontrastkante](images/harz/kontrastkante.mp4) | blue line SD  | 6a | [x] | [x]
+[Schattenseite](images/harz/schattenseite.mp4) | red line SD  | 6a+ | [x] | [x]
 
 
 Tropenblock
 --------------
-# ![Tropenblock]({{ "/assets/harz/tropenblock.jpeg" | relative_url }})
+# ![Tropenblock](images/harz/tropenblock.jpeg)
 
 Name    | Description                           | Grade | L | P
 ------- | ------------------------------------- | ----- |:-:|:-:
-[Tropen-Trubel]({{ "/assets/harz/tropentrubel.mp4" | relative_url }}) | red line SD | 6c | [ ] | [x]
+[Tropen-Trubel](images/harz/tropentrubel.mp4) | red line SD | 6c | [ ] | [x]
 Tropen-Traube | variant dotted line SD  | 6b+ | [ ] | [x]
 
 Quader
 --------------
-# ![Quader]({{ "/assets/harz/quader.jpeg" | relative_url }})
+# ![Quader](images/harz/quader.jpeg)
 
 Name    | Description                           | Grade | L | P
 ------- | ------------------------------------- | ----- |:-:|:-:
-[Schwarzes Loch]({{ "/assets/harz/schwarzesloch.mp4" | relative_url }}) | green line SD | 6a | [x] | [x]
+[Schwarzes Loch](images/harz/schwarzesloch.mp4) | green line SD | 6a | [x] | [x]
 Business class | red line SD | 6a | [ ] | [x]
-[Eifon]({{ "/assets/harz/eifon.mp4" | relative_url }})| white line SD | 6b+ | [ ] | [x]
-[Blackberry]({{ "/assets/harz/blackberry.mp4" | relative_url }})| pink line SD | 7a | [ ] | [x]
-[Tschipfel]({{ "/assets/harz/tschipfel.mp4" | relative_url }}) | blue line SD | 6b | [ ] | [x]
+[Eifon](images/harz/eifon.mp4)| white line SD | 6b+ | [ ] | [x]
+[Blackberry](images/harz/blackberry.mp4)| pink line SD | 7a | [ ] | [x]
+[Tschipfel](images/harz/tschipfel.mp4) | blue line SD | 6b | [ ] | [x]
 
 Big Boy
 --------------
-# ![Big Boy]({{ "/assets/harz/bigboy.jpeg" | relative_url }})
+# ![Big Boy](images/harz/bigboy.jpeg)
 
 Name    | Description                           | Grade | L | P
 ------- | ------------------------------------- | ----- |:-:|:-:
-[Little Boy]({{ "/assets/harz/littleboy.mp4" | relative_url }}) | blue line  | 6a+ | [ ] | [x]
+[Little Boy](images/harz/littleboy.mp4) | blue line  | 6a+ | [ ] | [x]

@@ -2,6 +2,6 @@ Title: Construction
 Date: 2023-09-28
 Category: Homewall
 
-## ![]({{ "/assets/homewall/buildingsite.jpg" | relative_url }}) ![]({{ "/assets/homewall/buildingdone.jpg" | relative_url }}) *Building our home wall*
+## ![img](images/homewall/buildingsite.jpg) ![img](images/homewall/buildingdone.jpg) *Building our home wall*
 
-## ![]({{ "/assets/homewall/firstholds.jpg" | relative_url }}) ![]({{ "/assets/homewall/firstholds1.jpg" | relative_url }}) *Building our home wall*
+## ![img](images/homewall/firstholds.jpg) ![img](images/homewall/firstholds1.jpg) *Building our home wall*

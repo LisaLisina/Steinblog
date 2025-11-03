@@ -4,7 +4,7 @@ SITEURL = ""
 
 THEME = "themes/eleven-pelican-theme"
 SUMMARY_MAX_LENGTH = 0
-ELEVEN_LOGO="content/images/logo.jpeg"
+ELEVEN_LOGO="images/logo.jpeg"
 SHOW_BANNER = True
 
 PATH = "content"
@@ -28,7 +28,11 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = ()
+LINKS = (
+        ("Out adventure blog <br/>",""),
+        ("Lisa's sends", "pages/lisa-sends.html"),
+        ("Paul's sends", "pages/paul-sends.html"),
+         )
 
 
 DEFAULT_PAGINATION = False

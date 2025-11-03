@@ -2,7 +2,7 @@ Title: Banana Scones
 Date: 2021-08-01
 Category: Food
 
-# ![]({{ "/assets/food/bananabread.jpg" | relative_url }}) *Yummy*
+# ![img](images/food/bananabread.jpg) *Yummy*
 
 ## Ingredients
 ### Caramalized bananas
