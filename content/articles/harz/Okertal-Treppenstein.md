@@ -5,7 +5,7 @@ Category: Harz
 
 Scheibe
 --------------
-# ![Scheibe](images/harz/scheibe.jpeg)
+# ![Scheibe](/images/harz/scheibe.jpeg)
 
 Name    | Description                           | Grade | L | P
 ------- | ------------------------------------- | ----- |:-:|:-:
@@ -14,8 +14,8 @@ Kristallografie | blue line SD | 6b+ | [ ] | [x]
 
 Opferstock
 --------------
-# ![Opferstock](images/harz/opferstock.jpeg)
+# ![Opferstock](/images/harz/opferstock.jpeg)
 
 Name    | Description                           | Grade | L | P
 ------- | ------------------------------------- | ----- |:-:|:-:
-[Krachlatte?](images/harz/krachlatte.mp4) | blue line  | 6c+ | [ ] | [x]
+[Krachlatte?](/images/harz/krachlatte.mp4) | blue line  | 6c+ | [ ] | [x]

@@ -5,19 +5,19 @@ Category: Homewall
 After one and a half years of climbing on our home wall, it was time for a reset. 
 
 
-# ![img](images/homewall/lastlook.jpeg) 
+# ![img](/images/homewall/lastlook.jpeg) 
 
 A last look at the old routes before we started taking them down.
 
-# ![img](images/homewall/reset.jpg) 
+# ![img](/images/homewall/reset.jpg) 
 
 With new holds from Handfest, a brand new volume, and some home-make holds we were ready!
 
-# ![img](images/homewall/handfest.jpeg) 
+# ![img](/images/homewall/handfest.jpeg) 
 
 A look at the finished wall
 
-# ![img](images/homewall/reset-done.jpeg)
+# ![img](/images/homewall/reset-done.jpeg)
 
 
 

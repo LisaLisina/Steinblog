@@ -2,7 +2,7 @@ Title: Lemon Cake
 Date: 2021-08-01
 Category: Food
 
-# ![img](images/food/lemoncake.jpg) *Yummy*
+# ![img](/images/food/lemoncake.jpg) *Yummy*
 
 ## Ingredients
 

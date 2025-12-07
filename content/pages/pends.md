@@ -29,20 +29,20 @@ Order: hidden
 | L'Angle | 3 | Apremont Désert | 11/24 | |
 | La Dalle | 3 | Apremont Désert | 11/24 | |
 | Malicia | 6b | Apremont Désert | 11/24 | |
-| [Des Vertes et des pas Mûres](images/font5/mures.mp4) | 6c+/7a | Apremont Désert | 11/24 | |
+| [Des Vertes et des pas Mûres](/images/font5/mures.mp4) | 6c+/7a | Apremont Désert | 11/24 | |
 | Sonnets Posthumes | 5- | Rocher Canon | 11/24 | |
 | La Proue Ombragée (assis) | 6b | Rocher Canon | 11/24 | |
 | Irrespirable | 6c | Apremont Désert | 11/24 | |
 | Blocco 46, C | 6a | Nudole, Daone |  09/24 | |
-| [Blocco 24, E](images/daone2/nudole24e.mp4) | 6b+ | Nudole, Daone |  09/24 | |
+| [Blocco 24, E](/images/daone2/nudole24e.mp4) | 6b+ | Nudole, Daone |  09/24 | |
 | Blocco 18, F (Figus) | 6a+ | Nudole, Daone |  09/24 | flash |
 | Blocco 18, D | 6a | Nudole, Daone |  09/24 | flash |
 | Blocco 18, C | 6a+ | Nudole, Daone |  09/24 | |
-| [Blocco 9, A](images/daone/aser9a_p.mp4) | 6a+ | Dos dei Aser, Daone |  07/24 | |
+| [Blocco 9, A](/images/daone/aser9a_p.mp4) | 6a+ | Dos dei Aser, Daone |  07/24 | |
 | Blocco 17, C | 6b+ | Dos dei Aser, Daone |  07/24 | flash |
-| [Blocco 14, N](images/daone/aser14n.mp4) | 6b | Dos dei Aser, Daone |  07/24 | |
-| [Blocco 15, A](images/daone/aser15a.mp4) | 6b | Dos dei Aser, Daone |  07/24 | flash |
-| [Blocco 15, B](images/daone/aser15b_p.mp4) | 6a+ | Dos dei Aser, Daone |  07/24 | |
+| [Blocco 14, N](/images/daone/aser14n.mp4) | 6b | Dos dei Aser, Daone |  07/24 | |
+| [Blocco 15, A](/images/daone/aser15a.mp4) | 6b | Dos dei Aser, Daone |  07/24 | flash |
+| [Blocco 15, B](/images/daone/aser15b_p.mp4) | 6a+ | Dos dei Aser, Daone |  07/24 | |
 | Blocco 7, Q | 6c | La Plana, Daone |  07/24 | |
 | Blocco 6, A | 6a | La Plana, Daone |  07/24 | flash |
 | El Padron del Mal | 6b+ | La Plana, Daone |  07/24 | |
@@ -53,35 +53,35 @@ Order: hidden
 | Ups | 6c | El Poris, Tenerife |  01/24 |   |
 | Charlie | 6b+ | El Poris, Tenerife |  01/24 |   |
 | Lost in Barranco | 6c+ | El Poris, Tenerife |  01/24 | flash |
-| [Eisberg](images/harz/eisberg.mp4) | 6c | Blankenburg |  07/23 |   |
+| [Eisberg](/images/harz/eisberg.mp4) | 6c | Blankenburg |  07/23 |   |
 | Bordwand | 6a | Blankenburg |  07/23 |   |
 | Untergang | 5c | Blankenburg |  07/23 |   |
-| [Bonaparte](images/wiesental/bonaparte.mp4) | 6b+ | Wiesental |  06/23 |   |
-| [Bavaria](images/font4/bavaria.mp4) | 6c | Apremont Butte aux Dames |  05/23 |   |
-| [Mise en Suif](images/font4/miseensuif.mp4) | 6a+ | Canche aux Merciers |  05/23 |   |
+| [Bonaparte](/images/wiesental/bonaparte.mp4) | 6b+ | Wiesental |  06/23 |   |
+| [Bavaria](/images/font4/bavaria.mp4) | 6c | Apremont Butte aux Dames |  05/23 |   |
+| [Mise en Suif](/images/font4/miseensuif.mp4) | 6a+ | Canche aux Merciers |  05/23 |   |
 | The Big Short (assis) | 6a | Canche aux Merciers |  05/23 |   |
 | Baby Groot | 6a | Canche aux Merciers |  05/23 |   |
-| [La Théorie de Filo](images/font4/theoriedefilo.mp4) | 6b+ | Apremont Désert |  05/23 |   |
-| [Encelade](images/font4/encelade.mp4) | 6a+ | Apremont Désert |  05/23 |   |
+| [La Théorie de Filo](/images/font4/theoriedefilo.mp4) | 6b+ | Apremont Désert |  05/23 |   |
+| [Encelade](/images/font4/encelade.mp4) | 6a+ | Apremont Désert |  05/23 |   |
 | L'Angle Dolmen | 6a | Apremont Désert |  05/23 |   |
-| [Jeu de Moules (gauche)](images/font4/jeudemoules.mp4) | 6a | Roche aux Oiseaux |  05/23 |   |
-| [Sophie](images/font4/sophie.mp4) | 6b | Roche aux Oiseaux |  05/23 |   |
+| [Jeu de Moules (gauche)](/images/font4/jeudemoules.mp4) | 6a | Roche aux Oiseaux |  05/23 |   |
+| [Sophie](/images/font4/sophie.mp4) | 6b | Roche aux Oiseaux |  05/23 |   |
 | La Vague (droite) | 5 | Canche aux Merciers |  05/23 |   |
 | La Vague | 6a | Canche aux Merciers |  05/23 |   |
 | Le Piston | 6a | Canche aux Merciers |  05/23 |   |
-| [Jeu de Jambes](images/font4/jeudejambes.mp4) | 6a | Canche aux Merciers |  05/23 |   |
+| [Jeu de Jambes](/images/font4/jeudejambes.mp4) | 6a | Canche aux Merciers |  05/23 |   |
 | Normalweg | 6a+ | Steinbrecherweg |  04/23 |   |
 | Schattenseite | 6a+ | Bodenstein |  04/23 |   |
 | Hard Pop-Corn | 6a | Maunoury |  04/23 |   |
 | Chickaletta | 6b | Maunoury |  04/23 |   |
 | Vol au Vent | 6c | Maunoury |  04/23 |   |
-| [Bingo Wings](images/font3/bingowings.mp4) | 6c...7a | Maunoury |  04/23 |   |
+| [Bingo Wings](/images/font3/bingowings.mp4) | 6c...7a | Maunoury |  04/23 |   |
 | Le Trapèze | 5 | Apremont Butte aux Dames |  04/23 |   |
-| [Insoumise](images/font3/insoumise.mp4) | 6b | Apremont Butte aux Dames |  04/23 |   |
-| [Powerslave](images/font3/powerslave.mp4) | 7a | Apremont Ouest |  04/23 |   |
-| [Skorbut](images/wiesental/skorbut.mp4) | 6c+ | Wiesental |  11/22 |   |
-| [La Rampe](images/font2/larampe.mp4) | 6a | Apremont Butte aux Dames |  10/22 |   |
-| [Le Blocage Tonique](images/font2/blocagetonique.mp4) | 6a | Apremont Butte aux Dames |  10/22 |   |
+| [Insoumise](/images/font3/insoumise.mp4) | 6b | Apremont Butte aux Dames |  04/23 |   |
+| [Powerslave](/images/font3/powerslave.mp4) | 7a | Apremont Ouest |  04/23 |   |
+| [Skorbut](/images/wiesental/skorbut.mp4) | 6c+ | Wiesental |  11/22 |   |
+| [La Rampe](/images/font2/larampe.mp4) | 6a | Apremont Butte aux Dames |  10/22 |   |
+| [Le Blocage Tonique](/images/font2/blocagetonique.mp4) | 6a | Apremont Butte aux Dames |  10/22 |   |
 | La Singlette | 6b+ | Rocher Canon |  10/22 |   |
 | L'Arpenteur du Restant | 6b | Restant du Long Rocher Sud |  10/22 |   |
 | L'Imparfait | 5 | Apremont Ouest |  10/22 |   |
@@ -99,11 +99,11 @@ Order: hidden
 | L'Impulsion | 5+ | Restant du Long Rocher |  10/22 |   |
 | L'Hétéroclite | 4+ | Restant du Long Rocher |  10/22 |   |
 | L'Hercule | 5- | Restant du Long Rocher |  10/22 |   |
-| [Scrubs](images/magicwood/scrubs.mp4) | 6c+/7a | Magic Wood |  08/22 |   |
-| [Blindflug](images/magicwood/blindflug.mp4) | 6c | Magic Wood |  08/22 |   |
+| [Scrubs](/images/magicwood/scrubs.mp4) | 6c+/7a | Magic Wood |  08/22 |   |
+| [Blindflug](/images/magicwood/blindflug.mp4) | 6c | Magic Wood |  08/22 |   |
 | Tischlein deck dich | 6c | Magic Wood |  08/22 |   |
-| [Merlin](images/magicwood/merlin.mp4) | 6b+ | Magic Wood |  08/22 |   |
-| [Angelina Jolie](images/magicwood/aj.mp4) | 6b+ | Magic Wood |  08/22 |   |
+| [Merlin](/images/magicwood/merlin.mp4) | 6b+ | Magic Wood |  08/22 |   |
+| [Angelina Jolie](/images/magicwood/aj.mp4) | 6b+ | Magic Wood |  08/22 |   |
 | Die Schöne | 6b | Magic Wood |  08/22 |   |
 | Schimmelplatte | 6b | Magic Wood |  08/22 | flash |
 | Juressic Parc | 6b | Magic Wood |  08/22 |   |
@@ -115,26 +115,26 @@ Order: hidden
 | Rausch der Tiefe | 6b | Wiesental |  08/22 |   |
 | Cono | 6a | Wiesental |  07/22 |   |
 | Tauchgang | 6a | Wiesental |  07/22 |   |
-| [Blackberry](images/harz/blackberry.mp4) | 7a | Bodenstein |  07/22 |   |
+| [Blackberry](/images/harz/blackberry.mp4) | 7a | Bodenstein |  07/22 |   |
 | Kontrastkante | 6a | Bodenstein |  07/22 |  |
 | Luv | 5c | Wiesental |  06/22 |   |
 | Lee | 5c | Wiesental |  06/22 |   |
 | Planke | 5b | Wiesental |  06/22 |   |
 | Bughub | 6a | Wiesental |  06/22 |   |
 | Krachlatte | 6c+ | Okertal |  06/22 |   |
-| [Little Boy](images/harz/littleboy.mp4) | 6a+ | Bodenstein |  05/22 |   |
+| [Little Boy](/images/harz/littleboy.mp4) | 6a+ | Bodenstein |  05/22 |   |
 | Breakdance | 6c | Bodenstein |  05/22 |   |
 | Schwarzes Loch | 6a | Bodenstein |  05/22 |   |
-| [Tschipfel](images/harz/tschipfel.mp4) | 6b | Bodenstein |  05/22 |   |
-| [Eifon](images/harz/eifon.mp4) | 6b+ | Bodenstein |  05/22 |   |
+| [Tschipfel](/images/harz/tschipfel.mp4) | 6b | Bodenstein |  05/22 |   |
+| [Eifon](/images/harz/eifon.mp4) | 6b+ | Bodenstein |  05/22 |   |
 | Business class | 6a | Bodenstein |  05/22 |   |
 | Super Furor | 6b+ | Wiesental |  05/22 |   |
 | Spreewaldbanane | 6b+ | Wiesental |  05/22 |   |
 | Expendor | 6a+ | Wiesental |  05/22 | flash |
-| [Tropen-Trubel](images/harz/tropentrubel.mp4) | 6c | Bodenstein |  05/22 |   |
+| [Tropen-Trubel](/images/harz/tropentrubel.mp4) | 6c | Bodenstein |  05/22 |   |
 | Tropen-Traube | 6b+ | Bodenstein | 05/22 |   |
 | La Zip Zut (direct) | 6b | Franchard Isatis | 04/22 | |
-| [Prairies Endormies](images/font/6c.mp4) | 6c | Franchard Isatis |  04/22 | |
+| [Prairies Endormies](/images/font/6c.mp4) | 6c | Franchard Isatis |  04/22 | |
 | La Patinette | 4+ | Franchard Isatis |  04/22 | flash |
 | Crocodile | 6a | Franchard Isatis |  04/22 | |
 | Les Frites | 5+ | Cuvier |  04/22 | |
