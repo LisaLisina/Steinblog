@@ -69,5 +69,21 @@ devserver-global:
 publish:
 	$(PELICAN) "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(PUBLISHCONF)" $(PELICANOPTS)
 
+publishdevserver:
+	$(PELICAN) -lr "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(PUBLISHCONF)" $(PELICANOPTS)
 
-.PHONY: html help clean regenerate serve serve-global devserver devserver-global publish 
+play:
+	@P=$$( [ "$(PORT)" = "0" ] && echo 8000 || echo "$(PORT)" ); \
+	$(MAKE) publishdevserver & echo $$! > .pelican.pid; \
+	sleep 1; \
+	xdg-open "http://localhost:$$P" >/dev/null 2>&1 || true; \
+	wait $$(cat .pelican.pid)
+
+stop:
+	@if [ -f .pelican.pid ]; then \
+		kill $$(cat .pelican.pid) 2>/dev/null || true; \
+		rm -f .pelican.pid; \
+	fi
+
+
+.PHONY: html help clean regenerate serve serve-global devserver devserver-global publish publishdevserver play stop
