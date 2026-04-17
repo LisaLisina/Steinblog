@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-
 from __future__ import annotations
 
 import argparse
@@ -8,6 +7,7 @@ import getpass
 import os
 import re
 import time
+from datetime import datetime
 from pathlib import Path
 
 from selenium import webdriver
@@ -35,63 +35,99 @@ STYLE_MAP = {
 Locator = tuple[str, str]
 
 
-# ---------- CSV helpers ----------
+# ---------- CSV / normalization helpers ----------
 
-def clean_value(value: str | None) -> str:
+def clean(value: str | None) -> str:
     if value is None:
         return ""
     value = str(value).strip()
     return "" if value.lower() == "null" else value
 
 
-def norm_spaces(text: str) -> str:
-    return re.sub(r"\s+", " ", text).strip()
+def squash(text: str | None) -> str:
+    return re.sub(r"\s+", " ", clean(text)).strip()
 
 
-def build_location(location_name: str, sector_name: str) -> str:
+def build_location(location_name: str | None, sector_name: str | None) -> str:
     parts: list[str] = []
-    for part in (clean_value(location_name), clean_value(sector_name)):
-        part = norm_spaces(part)
+    for part in (squash(location_name), squash(sector_name)):
         if part and part not in parts:
             parts.append(part)
     return " - ".join(parts)
 
 
-def build_date(iso_date: str) -> str:
-    iso_date = clean_value(iso_date)
-    return iso_date.split("T", 1)[0] if iso_date else ""
+def build_month_year(iso_date: str | None) -> str:
+    raw = clean(iso_date)
+    if not raw:
+        return ""
+    try:
+        dt = datetime.strptime(raw[:10], "%Y-%m-%d")
+        return dt.strftime("%m/%Y")
+    except ValueError:
+        return raw
 
 
-def parse_multi_pitch(raw_comment: str) -> tuple[bool, str]:
-    comment = clean_value(raw_comment)
-    if not comment:
+def parse_multi_pitch(comment: str | None) -> tuple[bool, str]:
+    text = clean(comment)
+    if not text:
         return False, ""
 
     pattern = re.compile(r"^\s*multi-pitch\b\s*[:\-–—]?\s*", re.IGNORECASE)
-    if pattern.match(comment):
-        return True, pattern.sub("", comment, count=1).strip()
-
-    return False, comment
+    is_multi = bool(pattern.match(text))
+    return is_multi, pattern.sub("", text, count=1).strip()
 
 
-def prettify_style(style: str) -> str:
-    style = clean_value(style).lower()
-    return STYLE_MAP.get(style, style) if style else ""
+def prettify_style(style: str | None) -> str:
+    key = clean(style).lower()
+    return STYLE_MAP.get(key, key) if key else ""
 
 
-def build_comment(style: str, raw_comment: str) -> tuple[bool, str]:
-    is_multi, cleaned_comment = parse_multi_pitch(raw_comment)
+def build_comment(style: str | None, raw_comment: str | None) -> tuple[bool, str]:
+    is_multi, comment = parse_multi_pitch(raw_comment)
     style_text = prettify_style(style)
 
-    if style_text and cleaned_comment:
-        return is_multi, f"{style_text} - {cleaned_comment}"
+    if style_text and comment:
+        return is_multi, f"{style_text} - {comment}"
     if style_text:
         return is_multi, style_text
-    return is_multi, cleaned_comment
+    return is_multi, comment
 
 
-def target_file_for_row(route_boulder: str, is_multi: bool) -> str | None:
-    kind = clean_value(route_boulder).upper()
+def to_roman(n: int) -> str:
+    vals = [
+        (1000, "M"), (900, "CM"), (500, "D"), (400, "CD"),
+        (100, "C"), (90, "XC"), (50, "L"), (40, "XL"),
+        (10, "X"), (9, "IX"), (5, "V"), (4, "IV"), (1, "I"),
+    ]
+    out = []
+    for value, symbol in vals:
+        while n >= value:
+            out.append(symbol)
+            n -= value
+    return "".join(out)
+
+
+def normalize_route_grade(grade: str | None) -> str:
+    g = squash(grade)
+    if not g:
+        return ""
+
+    # French scale stays as-is if it contains a/b/c anywhere.
+    if re.search(r"[abc]", g, flags=re.IGNORECASE):
+        return g
+
+    # Convert UIAA like 6-, 6, 6+, 7- -> VI-, VI, VI+, VII-
+    m = re.fullmatch(r"(\d+)\s*([+-]?)", g)
+    if not m:
+        return g
+
+    number = int(m.group(1))
+    suffix = m.group(2)
+    return f"{to_roman(number)}{suffix}"
+
+
+def target_file(route_boulder: str | None, is_multi: bool) -> str | None:
+    kind = clean(route_boulder).upper()
     if kind == "BOULDER":
         return "boulder.csv"
     if kind == "ROUTE":
@@ -99,70 +135,52 @@ def target_file_for_row(route_boulder: str, is_multi: bool) -> str | None:
     return None
 
 
-def row_key(name: str, location: str) -> tuple[str, str]:
-    return norm_spaces(name), norm_spaces(location)
+def row_key(row: dict) -> tuple[str, str]:
+    return squash(row.get("name", "")), squash(row.get("location", ""))
 
 
 def ensure_csv(path: Path) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    if not path.exists():
-        with path.open("w", newline="", encoding="utf-8") as f:
-            writer = csv.DictWriter(f, fieldnames=OUT_FIELDS)
-            writer.writeheader()
-
-
-def normalize_existing_csv(path: Path) -> None:
-    ensure_csv(path)
-
-    with path.open("r", newline="", encoding="utf-8") as f:
-        reader = csv.DictReader(f)
-        fields = reader.fieldnames or []
-        if fields == OUT_FIELDS:
-            return
-        rows = [{field: clean_value(row.get(field, "")) for field in OUT_FIELDS} for row in reader]
-
+    if path.exists():
+        return
     with path.open("w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=OUT_FIELDS)
-        writer.writeheader()
-        writer.writerows(rows)
+        csv.DictWriter(f, fieldnames=OUT_FIELDS).writeheader()
 
 
-def load_existing_rows(path: Path) -> list[dict]:
-    normalize_existing_csv(path)
+def read_csv_rows(path: Path) -> list[dict]:
+    ensure_csv(path)
     with path.open("r", newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f)
-        return [{field: clean_value(row.get(field, "")) for field in OUT_FIELDS} for row in reader]
-
-
-def load_existing_keys(path: Path) -> set[tuple[str, str]]:
-    return {
-        row_key(r["name"], r["location"])
-        for r in load_existing_rows(path)
-        if r["name"] and r["location"]
-    }
+        rows = []
+        for row in reader:
+            rows.append({field: clean(row.get(field, "")) for field in OUT_FIELDS})
+    return rows
 
 
 def append_rows(path: Path, rows: list[dict]) -> None:
     if not rows:
         return
-    normalize_existing_csv(path)
+    ensure_csv(path)
     with path.open("a", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=OUT_FIELDS)
         writer.writerows(rows)
 
 
 def convert_row(vl_row: dict) -> tuple[str | None, dict | None]:
-    name = norm_spaces(clean_value(vl_row.get("name", "")))
-    location = build_location(vl_row.get("location_name", ""), vl_row.get("sector_name", ""))
-    date = build_date(vl_row.get("date", ""))
-    grade = clean_value(vl_row.get("difficulty", ""))
-    is_multi, comment = build_comment(vl_row.get("type", ""), vl_row.get("comment", ""))
+    name = squash(vl_row.get("name"))
+    location = build_location(vl_row.get("location_name"), vl_row.get("sector_name"))
+    date = build_month_year(vl_row.get("date"))
+    is_multi, comment = build_comment(vl_row.get("type"), vl_row.get("comment"))
+    target = target_file(vl_row.get("route_boulder"), is_multi)
 
-    target = target_file_for_row(vl_row.get("route_boulder", ""), is_multi)
     if not target or not name or not location:
         return None, None
 
-    out_row = {
+    grade = squash(vl_row.get("difficulty"))
+    if target in {"lead.csv", "multi.csv"}:
+        grade = normalize_route_grade(grade)
+
+    return target, {
         "name": name,
         "grade": grade,
         "location": location,
@@ -170,40 +188,42 @@ def convert_row(vl_row: dict) -> tuple[str | None, dict | None]:
         "comment": comment,
         "video": "",
     }
-    return target, out_row
 
 
-def sync_vertical_life(input_csv: Path, out_dir: Path, dry_run: bool = False) -> None:
+def sync_vertical_life(input_csv: Path, user_dir: Path, dry_run: bool = False) -> None:
     targets = {
-        "boulder.csv": out_dir / "boulder.csv",
-        "lead.csv": out_dir / "lead.csv",
-        "multi.csv": out_dir / "multi.csv",
+        "boulder.csv": user_dir / "boulder.csv",
+        "lead.csv": user_dir / "lead.csv",
+        "multi.csv": user_dir / "multi.csv",
     }
 
-    existing_keys = {name: load_existing_keys(path) for name, path in targets.items()}
+    existing = {
+        name: {row_key(row) for row in read_csv_rows(path) if row["name"] and row["location"]}
+        for name, path in targets.items()
+    }
     new_rows = {name: [] for name in targets}
     seen_this_run = {name: set() for name in targets}
 
     with input_csv.open("r", newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f)
         for vl_row in reader:
-            target_name, out_row = convert_row(vl_row)
-            if not target_name or not out_row:
+            target, out_row = convert_row(vl_row)
+            if not target or not out_row:
                 continue
 
-            key = row_key(out_row["name"], out_row["location"])
-            if key in existing_keys[target_name] or key in seen_this_run[target_name]:
+            key = row_key(out_row)
+            if key in existing[target] or key in seen_this_run[target]:
                 continue
 
-            new_rows[target_name].append(out_row)
-            seen_this_run[target_name].add(key)
+            new_rows[target].append(out_row)
+            seen_this_run[target].add(key)
 
-    for target_name, rows in new_rows.items():
-        print(f"{target_name}: {len(rows)} new row(s)")
+    for name, rows in new_rows.items():
+        print(f"{name}: {len(rows)} new row(s)")
         for row in rows:
             print(f"  + {row['name']} @ {row['location']}")
         if not dry_run:
-            append_rows(targets[target_name], rows)
+            append_rows(targets[name], rows)
 
 
 # ---------- Selenium helpers ----------
@@ -211,9 +231,9 @@ def sync_vertical_life(input_csv: Path, out_dir: Path, dry_run: bool = False) ->
 USERNAME_LOCATORS: list[Locator] = [
     (By.XPATH, "//label[contains(., 'Username or email')]/following::input[1]"),
     (By.CSS_SELECTOR, "input[type='email']"),
-    (By.CSS_SELECTOR, "input[type='text']"),
     (By.CSS_SELECTOR, "input[name*='user' i]"),
     (By.CSS_SELECTOR, "input[name*='email' i]"),
+    (By.CSS_SELECTOR, "input[type='text']"),
 ]
 
 PASSWORD_LOCATORS: list[Locator] = [
@@ -230,7 +250,6 @@ LOGIN_BUTTON_LOCATORS: list[Locator] = [
 
 INFO_TAB_LOCATORS: list[Locator] = [
     (By.XPATH, "//*[self::a or self::button or self::div][normalize-space()='Info']"),
-    (By.XPATH, "//*[contains(@class,'tab') and normalize-space()='Info']"),
 ]
 
 ABOUT_EDIT_LOCATORS: list[Locator] = [
@@ -270,44 +289,59 @@ EXPORT_BUTTON_LOCATORS: list[Locator] = [
     ),
 ]
 
-def _get_password(cli_password: str | None) -> str:
+
+def get_password(cli_password: str | None) -> str:
     if cli_password:
         return cli_password
-    env_password = os.environ.get("VL_PASSWORD")
-    if env_password:
+    if env_password := os.environ.get("VL_PASSWORD"):
         return env_password
     return getpass.getpass("Vertical-Life password: ")
 
 
-def _page_text(driver) -> str:
+def human_check_present(driver) -> bool:
     try:
-        return driver.page_source.lower()
+        text = driver.page_source.lower()
     except Exception:
-        return ""
+        return False
+    return any(
+        marker in text
+        for marker in (
+            "are you human",
+            "verify you are human",
+            "verifying you are human",
+            "checking your browser",
+            "cloudflare",
+            "captcha",
+            "i am human",
+        )
+    )
 
 
-def _human_check_present(driver) -> bool:
-    text = _page_text(driver)
-    markers = [
-        "are you human",
-        "verify you are human",
-        "verifying you are human",
-        "checking your browser",
-        "cloudflare",
-        "captcha",
-        "i am human",
-    ]
-    return any(marker in text for marker in markers)
+def scroll_page(driver) -> None:
+    driver.execute_script(
+        """
+        window.scrollBy(0, 500);
+        for (const el of document.querySelectorAll('div, section, main, aside')) {
+            try {
+                const s = getComputedStyle(el);
+                const canScroll =
+                    (s.overflowY === 'auto' || s.overflowY === 'scroll') &&
+                    el.scrollHeight > el.clientHeight + 20;
+                if (canScroll) el.scrollTop += 500;
+            } catch (_) {}
+        }
+        """
+    )
 
 
-def _find_first_now(driver, locators: list[Locator], *, visible: bool = True, clickable: bool = False):
+def find_first(driver, locators: list[Locator], *, clickable: bool = False):
     for by, value in locators:
         try:
             for el in driver.find_elements(by, value):
                 try:
-                    if visible and not el.is_displayed():
+                    if not el.is_displayed():
                         continue
-                    if clickable and (not el.is_displayed() or not el.is_enabled()):
+                    if clickable and not el.is_enabled():
                         continue
                     return el
                 except StaleElementReferenceException:
@@ -317,60 +351,86 @@ def _find_first_now(driver, locators: list[Locator], *, visible: bool = True, cl
     return None
 
 
-def _wait_for_first(driver, locators: list[Locator], timeout: int = 15, *, visible: bool = True, clickable: bool = False):
+def wait_for_element(
+    driver,
+    locators: list[Locator],
+    timeout: int = 15,
+    *,
+    clickable: bool = False,
+    scroll: bool = False,
+):
     deadline = time.time() + timeout
     last_exc = None
 
     while time.time() < deadline:
         try:
-            el = _find_first_now(driver, locators, visible=visible, clickable=clickable)
+            el = find_first(driver, locators, clickable=clickable)
             if el is not None:
+                try:
+                    driver.execute_script("arguments[0].scrollIntoView({block:'center'});", el)
+                except Exception:
+                    pass
                 return el
         except Exception as exc:
             last_exc = exc
-        time.sleep(0.2)
+
+        if scroll:
+            scroll_page(driver)
+        time.sleep(0.25)
 
     raise RuntimeError(f"Timed out waiting for element. Locators: {locators}") from last_exc
 
 
-def _type_into(driver, locators: list[Locator], text: str, timeout: int = 15) -> None:
-    el = _wait_for_first(driver, locators, timeout=timeout, visible=True)
+def type_into(driver, locators: list[Locator], text: str, timeout: int = 15) -> None:
+    el = wait_for_element(driver, locators, timeout=timeout)
     el.clear()
     el.send_keys(text)
 
 
-def _click_any(driver, locators: list[Locator], timeout: int = 15, retries: int = 5) -> None:
+def click_any(
+    driver,
+    locators: list[Locator],
+    timeout: int = 15,
+    retries: int = 5,
+    *,
+    scroll: bool = False,
+) -> None:
     last_exc = None
-
     for _ in range(retries):
         try:
-            el = _wait_for_first(driver, locators, timeout=timeout, visible=True, clickable=True)
+            el = wait_for_element(
+                driver,
+                locators,
+                timeout=timeout,
+                clickable=True,
+                scroll=scroll,
+            )
             driver.execute_script(
-                "arguments[0].scrollIntoView({block:'center', inline:'center'});",
-                el,
+                "arguments[0].scrollIntoView({block:'center', inline:'center'});", el
             )
             time.sleep(0.15)
-
             try:
                 el.click()
             except ElementClickInterceptedException:
                 driver.execute_script("arguments[0].click();", el)
             return
-
-        except (StaleElementReferenceException, RuntimeError, WebDriverException) as exc:
+        except (RuntimeError, StaleElementReferenceException, WebDriverException) as exc:
             last_exc = exc
             time.sleep(0.4)
 
     raise RuntimeError(f"Could not click element. Locators: {locators}") from last_exc
 
 
-def _wait_for_login_complete(driver, timeout: int = 300, headed: bool = False) -> None:
+def wait_for_login_complete(driver, timeout: int = 300, headed: bool = False) -> None:
     deadline = time.time() + timeout
     warned = False
 
     while time.time() < deadline:
         current_url = driver.current_url.lower()
-        text = _page_text(driver)
+        try:
+            page_text = driver.page_source.lower()
+        except Exception:
+            page_text = ""
 
         if "my-profile" in current_url:
             return
@@ -379,11 +439,11 @@ def _wait_for_login_complete(driver, timeout: int = 300, headed: bool = False) -
             "8a.nu" in current_url
             and "login" not in current_url
             and "vertical-life.info" not in current_url
-            and "password" not in text
+            and "password" not in page_text
         ):
             return
 
-        if _human_check_present(driver):
+        if human_check_present(driver):
             if not headed:
                 raise RuntimeError(
                     "Human verification detected. Re-run with --headed and complete it manually."
@@ -397,114 +457,34 @@ def _wait_for_login_complete(driver, timeout: int = 300, headed: bool = False) -
     raise RuntimeError(f"Timed out waiting for login to complete. Current URL: {driver.current_url}")
 
 
-def _dismiss_cookie_banner(driver) -> None:
-    cookie_locators = [
-        (By.XPATH, "//button[contains(.,'Accept')]"),
-        (By.XPATH, "//button[contains(.,'Allow all')]"),
-        (By.XPATH, "//button[contains(.,'I agree')]"),
-        (By.XPATH, "//button[contains(.,'Got it')]"),
-    ]
+def dismiss_cookie_banner(driver) -> None:
     try:
-        _click_any(driver, cookie_locators, timeout=3, retries=1)
+        click_any(
+            driver,
+            [
+                (By.XPATH, "//button[contains(.,'Accept')]"),
+                (By.XPATH, "//button[contains(.,'Allow all')]"),
+                (By.XPATH, "//button[contains(.,'I agree')]"),
+                (By.XPATH, "//button[contains(.,'Got it')]"),
+            ],
+            timeout=3,
+            retries=1,
+        )
     except Exception:
         pass
 
 
-def _scroll_page_and_containers(driver) -> None:
-    driver.execute_script(
-        """
-        window.scrollBy(0, Math.max(450, Math.floor(window.innerHeight * 0.8)));
-
-        const nodes = Array.from(document.querySelectorAll('div, section, main, aside'));
-        for (const el of nodes) {
-            try {
-                const style = getComputedStyle(el);
-                const overflowY = style.overflowY;
-                const canScroll = (overflowY === 'auto' || overflowY === 'scroll') &&
-                                  el.scrollHeight > el.clientHeight + 40;
-                if (canScroll) {
-                    el.scrollTop = Math.min(
-                        el.scrollTop + Math.max(300, Math.floor(el.clientHeight * 0.8)),
-                        el.scrollHeight
-                    );
-                }
-            } catch (e) {}
-        }
-        """
-    )
-
-
-def _scroll_until_found(
-    driver,
-    locators: list[Locator],
-    timeout: int = 20,
-    *,
-    visible: bool = True,
-    clickable: bool = False,
-):
-    deadline = time.time() + timeout
-
-    while time.time() < deadline:
-        el = _find_first_now(driver, locators, visible=visible, clickable=clickable)
-        if el is not None:
-            try:
-                driver.execute_script("arguments[0].scrollIntoView({block:'center'});", el)
-                time.sleep(0.2)
-            except Exception:
-                pass
-            return el
-
-        driver.execute_script(
-            """
-            window.scrollBy(0, 500);
-
-            const nodes = Array.from(document.querySelectorAll('div, section, main, aside'));
-            for (const el of nodes) {
-                try {
-                    const style = getComputedStyle(el);
-                    const canScroll =
-                        (style.overflowY === 'auto' || style.overflowY === 'scroll') &&
-                        el.scrollHeight > el.clientHeight + 20;
-
-                    if (canScroll) {
-                        el.scrollTop += 500;
-                    }
-                } catch (e) {}
-            }
-            """
-        )
-        time.sleep(0.4)
-
-    raise RuntimeError(f"Timed out while scrolling for element. Locators: {locators}")
-
-def _wait_for_download(download_dir: Path, existing_files: set[str], timeout: int = 30) -> Path:
+def wait_for_download(download_dir: Path, existing_files: set[str], timeout: int = 45) -> Path:
     deadline = time.time() + timeout
     while time.time() < deadline:
-        files = [p for p in download_dir.iterdir() if p.is_file()]
-        new_files = [p for p in files if p.name not in existing_files]
-        finished = [p for p in new_files if not p.name.endswith(".part")]
-        if finished:
-            return max(finished, key=lambda p: p.stat().st_mtime)
+        new_files = [
+            p for p in download_dir.iterdir()
+            if p.is_file() and p.name not in existing_files and not p.name.endswith(".part")
+        ]
+        if new_files:
+            return max(new_files, key=lambda p: p.stat().st_mtime)
         time.sleep(0.5)
     raise RuntimeError("Timed out waiting for CSV download to finish.")
-
-
-def _dump_debug_candidates(driver) -> None:
-    try:
-        candidates = driver.find_elements(
-            By.XPATH,
-            "//div[contains(@class,'separator-container')][.//div[normalize-space()='About']]"
-            "//div[contains(@class,'icon-container')]",
-        )
-        print(f"Found {len(candidates)} About icon candidate(s).")
-        for idx, el in enumerate(candidates[:5]):
-            try:
-                print(f"\n--- About candidate {idx} ---")
-                print(el.get_attribute("outerHTML")[:1500])
-            except Exception:
-                pass
-    except Exception:
-        pass
 
 
 # ---------- Fetch logic ----------
@@ -513,17 +493,17 @@ def fetch_vertical_life_csv(
     user_slug: str,
     vl_username: str,
     vl_password: str,
-    raw_dir: Path,
+    user_dir: Path,
     headed: bool = False,
     timeout_sec: int = 20,
     login_timeout_sec: int = 300,
     geckodriver_path: str | None = None,
     firefox_binary: str | None = None,
 ) -> Path:
-    raw_dir.mkdir(parents=True, exist_ok=True)
-    out_csv = raw_dir / f"vl_{user_slug}.csv"
-    debug_png = raw_dir / f"vl_{user_slug}_debug.png"
-    debug_html = raw_dir / f"vl_{user_slug}_debug.html"
+    user_dir.mkdir(parents=True, exist_ok=True)
+    out_csv = user_dir / f"vl_{user_slug}.csv"
+    debug_png = user_dir / f"vl_{user_slug}_debug.png"
+    debug_html = user_dir / f"vl_{user_slug}_debug.html"
 
     options = FirefoxOptions()
     if not headed:
@@ -532,7 +512,7 @@ def fetch_vertical_life_csv(
         options.binary_location = firefox_binary
 
     options.set_preference("browser.download.folderList", 2)
-    options.set_preference("browser.download.dir", str(raw_dir.resolve()))
+    options.set_preference("browser.download.dir", str(user_dir.resolve()))
     options.set_preference("browser.download.useDownloadDir", True)
     options.set_preference("browser.download.manager.showWhenStarting", False)
     options.set_preference(
@@ -553,38 +533,31 @@ def fetch_vertical_life_csv(
 
     try:
         driver.set_window_size(1440, 1400)
-        existing_files = {p.name for p in raw_dir.iterdir() if p.is_file()}
+        existing_files = {p.name for p in user_dir.iterdir() if p.is_file()}
 
-        # Login
         driver.get("https://www.8a.nu/login?redirect=%2F")
-        _dismiss_cookie_banner(driver)
+        dismiss_cookie_banner(driver)
 
-        _type_into(driver, USERNAME_LOCATORS, vl_username, timeout=timeout_sec)
-        _type_into(driver, PASSWORD_LOCATORS, vl_password, timeout=timeout_sec)
-        _click_any(driver, LOGIN_BUTTON_LOCATORS, timeout=timeout_sec, retries=3)
+        type_into(driver, USERNAME_LOCATORS, vl_username, timeout=timeout_sec)
+        type_into(driver, PASSWORD_LOCATORS, vl_password, timeout=timeout_sec)
+        click_any(driver, LOGIN_BUTTON_LOCATORS, timeout=timeout_sec, retries=3)
 
-        _wait_for_login_complete(driver, timeout=login_timeout_sec, headed=headed)
+        wait_for_login_complete(driver, timeout=login_timeout_sec, headed=headed)
 
-        # Profile
         driver.get("https://www.8a.nu/my-profile")
         time.sleep(2)
 
-        # Info tab if needed
         try:
-            _click_any(driver, INFO_TAB_LOCATORS, timeout=5, retries=2)
+            click_any(driver, INFO_TAB_LOCATORS, timeout=5, retries=2)
             time.sleep(1)
         except Exception:
             pass
 
-        # Click exact About edit icon from your HTML
-        _dump_debug_candidates(driver)
-        _click_any(driver, ABOUT_EDIT_LOCATORS, timeout=timeout_sec, retries=5)
+        click_any(driver, ABOUT_EDIT_LOCATORS, timeout=timeout_sec, retries=5, scroll=True)
         time.sleep(1.5)
 
-        # Go straight for the real Download button in the opened panel/modal
-        _scroll_until_found(driver, EXPORT_BUTTON_LOCATORS, timeout=30, visible=True, clickable=True)
-        _click_any(driver, EXPORT_BUTTON_LOCATORS, timeout=timeout_sec, retries=5)
-        downloaded = _wait_for_download(raw_dir, existing_files, timeout=45)
+        click_any(driver, EXPORT_BUTTON_LOCATORS, timeout=30, retries=5, scroll=True)
+        downloaded = wait_for_download(user_dir, existing_files, timeout=45)
 
         if downloaded.resolve() != out_csv.resolve():
             if out_csv.exists():
@@ -613,46 +586,47 @@ def main() -> None:
     parser = argparse.ArgumentParser(
         description="Sync Vertical-Life export into boulder.csv, lead.csv, multi.csv"
     )
-    parser.add_argument("out_dir", type=Path, help="Output directory containing target CSVs")
-    parser.add_argument("--input-csv", type=Path, help="Path to an already-downloaded Vertical-Life CSV")
-    parser.add_argument("--dry-run", action="store_true", help="Show what would be added")
+    parser.add_argument("--user", required=True, help="Short user slug, e.g. paul")
+    parser.add_argument("--base-dir", type=Path, default=Path(""), help="Base directory for user folders")
+    parser.add_argument("--input-csv", type=Path, help="Optional path to an existing Vertical-Life CSV")
     parser.add_argument("--fetch", action="store_true", help="Fetch the CSV from Vertical-Life before syncing")
-    parser.add_argument("--user", help="Short user slug, e.g. paul -> data/raw/vl_paul.csv")
     parser.add_argument("--vl-username", help="Vertical-Life login name/email")
     parser.add_argument("--vl-password", help="Vertical-Life password (omit to prompt)")
-    parser.add_argument("--raw-dir", type=Path, default=Path("data/raw"), help="Directory for downloaded raw CSVs")
+    parser.add_argument("--dry-run", action="store_true", help="Show what would be added")
     parser.add_argument("--headed", action="store_true", help="Show browser window while fetching")
     parser.add_argument("--timeout-sec", type=int, default=20, help="Generic Selenium wait timeout")
-    parser.add_argument("--login-timeout-sec", type=int, default=300, help="How long to wait for manual human verification")
+    parser.add_argument(
+        "--login-timeout-sec",
+        type=int,
+        default=300,
+        help="How long to wait for manual human verification",
+    )
     parser.add_argument("--geckodriver-path", help="Optional path to geckodriver")
     parser.add_argument("--firefox-binary", help="Optional path to firefox binary")
-
     args = parser.parse_args()
-    input_csv = args.input_csv
+
+    user_dir = args.base_dir / args.user
+    default_csv = user_dir / f"vl_{args.user}.csv"
+    input_csv = args.input_csv or default_csv
 
     if args.fetch:
-        if not args.user:
-            parser.error("--fetch requires --user")
         if not args.vl_username:
             parser.error("--fetch requires --vl-username")
-
-        password = _get_password(args.vl_password)
         input_csv = fetch_vertical_life_csv(
             user_slug=args.user,
             vl_username=args.vl_username,
-            vl_password=password,
-            raw_dir=args.raw_dir,
+            vl_password=get_password(args.vl_password),
+            user_dir=user_dir,
             headed=args.headed,
             timeout_sec=args.timeout_sec,
             login_timeout_sec=args.login_timeout_sec,
             geckodriver_path=args.geckodriver_path,
             firefox_binary=args.firefox_binary,
         )
+    elif not input_csv.exists():
+        parser.error(f"Input CSV not found: {input_csv}. Use --fetch or provide --input-csv.")
 
-    if input_csv is None:
-        parser.error("Provide either --input-csv or --fetch")
-
-    sync_vertical_life(input_csv=input_csv, out_dir=args.out_dir, dry_run=args.dry_run)
+    sync_vertical_life(input_csv=input_csv, user_dir=user_dir, dry_run=args.dry_run)
 
 
 if __name__ == "__main__":
