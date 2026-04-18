@@ -62,7 +62,7 @@ def build_month_year(iso_date: str | None) -> str:
         return ""
     try:
         dt = datetime.strptime(raw[:10], "%Y-%m-%d")
-        return dt.strftime("%m/%Y")
+        return dt.strftime("%Y-%m")
     except ValueError:
         return raw
 
