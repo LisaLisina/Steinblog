@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Paul's Sends{% endblock %}
+
+{% block content %}
+<main class="page-content" aria-label="Content">
+  <div class="w">
+    <a href="{{ SITEURL }}/">^</a>
+  </div>
+  <div class="box">
+    <h1>Paul's Sends</h1>
+    {% set person_key = "paul" %}
+    {% include "climbs.html" %}
+  </div>
+</main>
+{% endblock %}

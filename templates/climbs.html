@@ -1,0 +1,66 @@
+{% set labels = {"boulder": "Boulder", "lead": "Lead", "multi": "Multipitch"} %}
+{% set data = load_person_climbs(person_key) %}
+
+<style>
+  .climb-category { margin-top: 1.5rem; }
+  .climb-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+  }
+  .climb-table th,
+  .climb-table td {
+    padding: 0.55rem 0.7rem;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    vertical-align: top;
+  }
+  .climb-table th { font-weight: 600; }
+  .climb-name { font-weight: 600; }
+  .climb-video {
+    margin-left: 0.4rem;
+    font-size: 0.9em;
+    white-space: nowrap;
+  }
+  .climb-muted { color: #666; }
+</style>
+
+{% for category_key, category_name in labels.items() %}
+  {% set rows = data[category_key] %}
+  <section class="climb-category">
+    <h2>{{ category_name }} <span class="climb-muted">({{ rows|length }})</span></h2>
+
+    {% if rows %}
+      <table class="climb-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Grade</th>
+            <th>Location</th>
+            <th>Date</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in rows %}
+            <tr>
+              <td class="climb-name">
+                {{ row.name }}
+                {% if row.video %}
+                  <a class="climb-video" href="{{ row.video }}">video</a>
+                {% endif %}
+              </td>
+              <td>{{ row.grade }}</td>
+              <td>{{ row.location }}</td>
+              <td>{{ pretty_date(row.date) }}</td>
+              <td>{{ row.comment }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p class="climb-muted">No entries yet.</p>
+    {% endif %}
+  </section>
+{% endfor %}
